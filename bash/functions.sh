@@ -6,8 +6,8 @@ function grep { (tty -s && exec <&-; $(which grep) $@); }
 
 # cd gem
 #
-#     henrik@Nyx ~$ cdgem thor
-#     henrik@Nyx ~/.rvm/gems/ree-1.8.7-2010.02/gems/thor-0.14.6$
+#     ~$ cdgem thor
+#     ~/.rvm/gems/ree-1.8.7-2010.02/gems/thor-0.14.6$
 
 #
 function cdgem {
@@ -27,8 +27,8 @@ function pwf {
 
 # Create directory and cd to it.
 #
-#     henrik@Nyx /tmp$ mkcd foo/bar/baz
-#     henrik@Nyx /tmp/foo/bar/baz$
+#     ~$ mkcd foo/bar/baz
+#     ~/foo/bar/baz$
 #
 function mkcd {
   mkdir -p "$1" && cd "$1"
@@ -44,27 +44,4 @@ function mkcd {
 function sshkey {
   ssh $1 "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys" < ~/.ssh/id_?sa.pub
   echo "sshkey done."
-}
-
-# "SCP home". Lets you scp to a remote server, then do e.g. "cd /sub/dir; scph file.txt" to the same
-# effect as switching to your local machine and running "scp remote:/sub/dir/file.txt ~/Downloads/".
-#
-# The remote must, of course, define this function, and must forward its port 2222 to your local 22,
-# e.g. with this at the top of your local ~/.ssh/config:
-#
-#   RemoteForward 2222 localhost:22
-
-function scph {
-  scp -P2222 $@ henrik@localhost:Downloads/
-}
-
-
-# Open the .xcodeproj file from the working directory (typically in Xcode).
-#
-#     henrik@Nyx ~/Code/iPhone/MyApp$ xc
-#     # equivalent to:
-#     open ~/Code/iPhone/MyApp/MyApp.xcodeproj
-#
-function xc {
-  open `ls | grep .xcodeproj`
 }

@@ -24,7 +24,7 @@ Changes to symlinked files without `<.replace>` bits do not require a `rake inst
 
 ## Vim
 
-I'm assuming MacVim (`brew install macvim`) and at least Vim 7.
+Assumes MacVim (`brew install macvim`) and at least Vim 7.
 
 Vim plugins are each their own directory under vim/bundles thanks to [Pathogen](http://www.vim.org/scripts/script.php?script_id=2332).
 
@@ -37,10 +37,3 @@ The Command-T plugin needs to be compiled:
     cd ~/.vim/bundle/command-t
     rvm system  # If you use rvm
     rake make
-
-
-## Extras
-
-The `extras` directory contains additional configuration files that are not dotfiles:
-
- * `Henrik.terminal` is a settings file (theme + key bindings) for the OS X Terminal.app.

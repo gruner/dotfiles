@@ -1,15 +1,13 @@
 # Dirs
-alias a="cd ~/Sites/auktion"
-alias i="cd ~/Code/iPhone/AK"
 alias o="open ."  # OS X, open in Finder
 
 # http://www.hogbaysoftware.com/products/plaintext
-alias text='mvim ~/Dropbox/PlainText'
+# alias text='mvim ~/Dropbox/PlainText'
 
 # Management
-alias dots="mvim ~/.dotfiles"
+alias dots="mvim ~/Dropbox/gSync/dotfiles"
 alias reload='source ~/.bash_profile && echo "sourced ~/.bash_profile"'
-alias redot='cd ~/.dotfiles && gpp && rake install; cd -'
+alias redot='cd ~/Dropbox/gSync/dotfiles && gpp && rake install; cd -'
 
 # Shell
 alias c='clear'
@@ -59,29 +57,30 @@ alias gam="git commit --amend"
 
 # Xcode versioning
 # http://www.blog.montgomerie.net/easy-iphone-application-versioning-with-agvtool
-alias xv="agvtool what-version; agvtool what-marketing-version"  # Show versions.
-alias xvbump="agvtool bump -all"  # Bump build number.
-alias xvset="agvtool new-marketing-version"  # Set user-visible version: xvset 2.0
+# alias xv="agvtool what-version; agvtool what-marketing-version"  # Show versions.
+# alias xvbump="agvtool bump -all"  # Bump build number.
+# alias xvset="agvtool new-marketing-version"  # Set user-visible version: xvset 2.0
 
 # Servers
 alias grace='sudo apachectl graceful'
 alias rst="touch tmp/restart.txt && echo touched tmp/restart.txt"  # Passenger
 
+# SSH
+alias sshbib='ssh biblewor@bibleworm.com'
+alias sshdf='ssh divinefl@divineflame.com'
+alias sshdiv='ssh divinefl@divineflame.com'
+alias sshplc='ssh pilgrim@pilgrimlutheran.org'
+alias sshpil='ssh pilgrim@pilgrimlutheran.org'
+alias sshgruner='ssh gruner@thegruners.com'
+alias sshgru='ssh gruner@thegruners.com'
+alias sshag='ssh andreux@andrewgruner.com'
+alias sshand='ssh andreux@andrewgruner.com'
+alias ssheg='ssh ether@ethergraphics.com'
+alias ssheth='ssh ether@ethergraphics.com'
+alias sshfb='ssh faithbug@faithbug.com'
+alias sshfai='ssh faithbug@faithbug.com'
+
+# Files
 alias hosts='sudo vim /etc/hosts'
 
-# Home network
-# On gf's computer, quiet music and disconnect Airfoil from speakers (to free them up for me).
-alias hush="cat ~/.bash/lib/hush.scpt | ssh heli osascript; echo hushed."
-
 # Work
-
-alias akdb='mysqladmin -u root -f drop auktion_development create auktion_development && mysql -u root auktion_development < ~/Downloads/auction_clean.sql && rake db:migrate'
-alias akdbg='scp www-data@sdb:/var/data/auktion/auction_clean.sql ~/Downloads/ && akdb'
-# Use with autologin Greasemonkey script: http://gist.github.com/raw/487186/ccf2c203741c1e39eb45416d02bc58b2728427fc/basefarm_auto.user.js
-alias vpn='open -a Firefox "https://ssl-vpn.sth.basefarm.net/ssl"'
-alias stagedb='OLD=true BRANCH=master cap staging deploy:import_db'
-
-# Testbot
-alias cpu2='pushd ~/Sites/auktion; rake testbot:runner:set_cpu_cores[2]; popd'
-alias cpu1='pushd ~/Sites/auktion; rake testbot:runner:set_cpu_cores[1]; popd'
-alias cpu0='pushd ~/Sites/auktion; rake testbot:runner:stop; popd'

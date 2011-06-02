@@ -1,8 +1,8 @@
 [user]
-	name = Henrik N
-	email = henrik@nyh.se
+	name = Andrew Gruner
+	email = andrew@divineflame.com
 [core]
-	excludesfile = /Users/henrik/.gitignore
+	excludesfile = $HOME/.gitignore
 	ignorecase = false
 [color]
 	status = auto
@@ -15,7 +15,7 @@
 	standup = shortlog --since=yesterday
 	uncommit = reset --soft HEAD^
 [github]
-	user = henrik
+	user = gruner
 	token = <.replace github-token>
 [push]
 	default = current

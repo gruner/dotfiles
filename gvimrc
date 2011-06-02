@@ -44,7 +44,7 @@ endif
 " Start without the toolbar
 set guioptions-=T
 
-set guifont=Monaco:h11
+set guifont=Inconsolata:h18
 
 " Default gui color scheme
 color blackboard
